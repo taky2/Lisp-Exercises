@@ -3,7 +3,7 @@
 ;;
 
 
-(defun flatten (lst) 
+(defun flatten_helper (lst) 
 	(cond
 		( (null lst)
 			nil
@@ -17,4 +17,8 @@
 	)
 )
 
-(print (remove nil (flatten  '(a b (c d) () (e (f (g) h))) )))
+(defun flatten (lst)
+	(flatten_helper (remove nil lst))
+)
+
+(print (flatten  '(a b (c d) () (e (f (g) h)))) )

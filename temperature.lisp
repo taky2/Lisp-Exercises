@@ -22,10 +22,10 @@
 
 (defun temperature (temp)
 
-	(setq unit (last temp))
+	(setq unit (second temp))
 	
-	(cond ( (string= "C" unit) ( write(c-to-f (first temp)) ) )
-		  ( (string= "F" unit) ( write(f-to-c (first temp)) ) )
+	(cond ( (string= 'C unit) ( write(c-to-f (first temp)) ) )
+		  ( (string= 'F unit) ( write(f-to-c (first temp)) ) )
 
 		  (t (write-line "Input error") ) 
 		  
@@ -38,5 +38,5 @@
 (temperature '(100 C))
 (write-line "")
 (write-line "converting 212 fahrenheit to centigrade")
-
+(temperature '(212 F))
 	
